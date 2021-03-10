@@ -36,7 +36,7 @@ DEFINE('RESSOURCES', ['Ressource 1', 'Ressource 2', 'Ressource 3']);
 
 ## Preview
 
-You can visit and use a live version of this tool [here](https://measure-queue-time-tool.bitnulleins.de).
+You can visit and use a live version of this tool [here](https://bitnulleins.de/pub/queue_length_measurement/).
 
 # Licence
 

@@ -1,5 +1,26 @@
 <?php
-require('./src/config.php');
+require('./config.php');
+$fw = fopen(FILEDIR, "a");
+
+$lines = 0;
+$handle = fopen(FILEDIR, "r");
+while(!feof($handle)){
+	$line = fgets($handle, 4096);
+	$lines += substr_count($line, PHP_EOL);
+}
+
+if ($lines == 0) {
+	$header[] = "ID";
+	$header[] = "Date";
+	$header[] = "Weekday";
+	$header[] = "Queue";
+	$header[] = "Measurement_Start";
+	$header[] = "Measurement_End";
+	$header[] = "Waiting_Time_Seconds";
+	$header[] = "Measurement_Timezone";
+	$row = join(",", $header);
+	fwrite($fw, $row."\n");
+}
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -18,7 +39,7 @@ require('./src/config.php');
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./script.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="text-center">

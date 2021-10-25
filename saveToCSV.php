@@ -5,16 +5,14 @@ require('config.php');
  * Source Code by bit01.de
  */
 
-$fileName = __DIR__ . "/" . BASE_DIR . FILENAME . '.csv';
-
 if (isset($_POST['location']) && isset($_POST['dateStart']) && isset($_POST['dateEnd'])) {
 
 	if (!is_dir(BASE_DIR)) {
 		mkdir(BASE_DIR);
 	}
-
-	$fw = fopen($fileName, 'a');
 	
+	$fw = fopen(FILEDIR, 'a');
+
 	$weekdays[1] = "Monday";
 	$weekdays[2] = "Tuesday";
 	$weekdays[3] = "Wednesday";
@@ -34,26 +32,6 @@ if (isset($_POST['location']) && isset($_POST['dateStart']) && isset($_POST['dat
 	$messaureDate = date("Y-m-d",$startDate);
 	$weekday = $weekdays[date("w")];
 	$timezone = date("e O",$startDate);
-	
-	$lines = 0;
-	$handle = fopen($fileName, "r");
-	while(!feof($handle)){
-	  $line = fgets($handle, 4096);
-	  $lines += substr_count($line, PHP_EOL);
-	}
-	
-	if ($lines == 0) {
-		$header[] = "ID";
-		$header[] = "Date";
-		$header[] = "Weekday";
-		$header[] = "Queue";
-		$header[] = "Measurement_Start";
-		$header[] = "Measurement_End";
-		$header[] = "Waiting_Time_Seconds";
-		$header[] = "Measurement_Timezone";
-		$row = join(",", $header);
-		fwrite($fw, $row."\n");
-	}
 	
 	$cells = array(uniqid(), $messaureDate, $weekday, $location, $startTime, $endTime, $waitTimeInSeconds, $bkkTime, $timezone);
 	$row = join(",", $cells);

@@ -24,7 +24,6 @@ $(document).ready(function() {
             $(this).text("Stop measurement");
             $('.record').toggle();
             $('#cancel').prop('disabled', false);
-            //$('input[type=radio]').prop('disabled', true);
         } else {
             endDate = new Date().getTime();
 
@@ -32,7 +31,7 @@ $(document).ready(function() {
 
             console.log({location:$('input[name=location]:checked').val(),dateStart:startDate,dateEnd:endDate});
             jQuery.ajax({
-                url: "./saveToCSV.php",
+                url: "saveToCSV.php",
                 data: {location:$('input[name=location]:checked').val(),dateStart:startDate,dateEnd:endDate},
                 type: "POST",
                 beforeSend: function() {
@@ -45,8 +44,9 @@ $(document).ready(function() {
                     messungen++;
                     $('#amount').text(messungen);
                 },
-                error: function() {
+                error: function(e) {
                     $('.record').text("Measurement can't be saved!");
+                    console.error(e);
                 }
             });
 
@@ -57,7 +57,6 @@ $(document).ready(function() {
 
 
             $(this).text("Start measurement");
-            //$('input[type=radio]').prop('disabled', false);
             $('#cancel').prop('disabled', true);
         }
     });
@@ -68,7 +67,6 @@ $(document).ready(function() {
         stopTimer();
         resetTimer();
         $('.record').hide();
-        //$('input[type=radio]').prop('disabled', false);
     });
 
     function startTimer() {

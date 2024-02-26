@@ -34,10 +34,6 @@ DEFINE('FILENAME', ID . '_waiting_queue_measurement');
 DEFINE('RESSOURCES', ['Ressource 1', 'Ressource 2', 'Ressource 3']);
 ```
 
-## Preview
-
-You can visit and use a live version of this tool [here](https://bitnulleins.de/pub/queue_length_measurement/).
-
 # Licence
 
 GNU GENERAL PUBLIC LICENSE V3

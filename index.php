@@ -1,5 +1,5 @@
 <?php
-require('./config.php');
+require('./backend/config.php');
 $fw = fopen(FILEDIR, "a");
 
 $lines = 0;
@@ -31,7 +31,6 @@ if ($lines == 0) {
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"/>
-    <meta name="google-site-verification" content="BcFbhBanHrkWBn35H8FcWmK_WRXAq6pzLrsIlYe66GE" />
     <title>Measure Queue Time - Web Tool</title>
     <meta type="description"
           content="Measure queue times (queue waiting time) of different ressources online with this tool for free. Save and export your queue times as CSV file.">
@@ -39,8 +38,8 @@ if ($lines == 0) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <script src="./frontend/script.js"></script>
+    <link rel="stylesheet" href="./frontend/style.css">
 </head>
 <body class="text-center">
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -87,7 +86,7 @@ if ($lines == 0) {
 
     <footer class="mastfoot mt-auto">
         <div class="inner">
-            <p>Queue Measurement Tool by <a target="_blank" href="https://www.bit01.de">bit01</a>.</p>
+            <p>Queue Measurement Tool | <a href="https://github.com/bitnulleins/queue-times-measurment" target="_blank">View Source Code</a></p>
         </div>
     </footer>
 </div>

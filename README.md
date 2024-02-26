@@ -1,16 +1,20 @@
-# Queue Time Measurment Tool
-Measure queue times easy with this lightweight and reponsive web client.
+# ⏱️ Queue Time Measurment Tool
 
-* Responsive Web Client (mobile-ready)
-* Can switch browser tabs while measure queue time
-* Download generated CSV with unique id's to analyse queue time
+This tool is a Open Source tool to measure queue times easily with lightweight and reponsive web client.
 
-With this tool you can measure for example:
+-   🔄 Dynamically generated backend/frontend
+-   📱 Responsive web client (mobile-ready)
+-   ⚙️ Runs in background
+-   📊 Download generated CSV with unique id's
 
-* Queue waiting time in supermarket, secruity check or other stores
-* Processing time from a machine
-* Computer boot times
-* Different ressources possible
+Use cases could be waiting times in supermarket or other queueing system, processing time from a machine or other ressources.
+
+> [!TIP]
+> Use Excel and connect via data source to the downloaded CSV to update data easily.
+
+## Screenshot
+
+<img src="screenshot.png" />
 
 ## How to use
 
@@ -21,7 +25,9 @@ With this tool you can measure for example:
 
 ## Installation
 
-1. Clone / Download Git repository to your server
+Requirements: PHP >= 7
+
+1. Clone / Download Git repository to your hosting server
 2. Change config when it is nescessary
 3. Start measurments...
 
